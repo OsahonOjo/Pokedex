@@ -72,13 +72,13 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.PokedexV
                     notifyDataSetChanged();
 
                 } catch (JSONException e) {
-                    Log.e("adapter", "JSON request error from response listener");
+                    Log.e("adapter", "JSON request error from response listener", e);
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e("adapter class", "JSON request error from error listener");
+                Log.e("adapter class", "JSON request error from error listener", error);
             }
         });
         requestQueue.add(request);

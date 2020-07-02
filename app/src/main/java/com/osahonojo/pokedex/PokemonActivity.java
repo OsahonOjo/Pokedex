@@ -87,13 +87,13 @@ public class PokemonActivity extends AppCompatActivity {
                     }
 
                 }catch (JSONException e) {
-                    Log.e("pokemon activity", "JSONArray request error");
+                    Log.e("pokemon activity", "JSONArray request error", e);
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e("pokemon activity", "JSONArray request error from error listener");
+                Log.e("pokemon activity", "JSONArray request error from error listener", error);
             }
         });
         requestQueue.add(request);
